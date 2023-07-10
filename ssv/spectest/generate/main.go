@@ -15,8 +15,6 @@ import (
 	"github.com/bloxapp/ssv-spec/ssv/spectest"
 )
 
-//go:generate go run main.go
-
 func main() {
 	clearStateComparisonFolder()
 
@@ -76,11 +74,11 @@ func writeJsonStateComparison(name, testType string, post interface{}) {
 	postMap, ok := post.(map[string]types.Root)
 
 	if !ok {
-	    writeSingleSCJson(name, testType, post)
-	    return
+		writeSingleSCJson(name, testType, post)
+		return
 	}
-        for subTestName, postState := range postMap {
-	    writeSingleSCJson(filepath.Join(name, subTestName), testType, postState)
+	for subTestName, postState := range postMap {
+		writeSingleSCJson(filepath.Join(name, subTestName), testType, postState)
 	}
 }
 

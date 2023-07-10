@@ -15,8 +15,6 @@ import (
 	"github.com/bloxapp/ssv-spec/qbft/spectest"
 )
 
-//go:generate go run main.go
-
 func main() {
 	clearStateComparisonFolder()
 
